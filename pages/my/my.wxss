@@ -1,0 +1,57 @@
+page{
+  background: #e9e7e8;
+}
+.wx-content{
+  padding: 80rpx;
+  background:#f95353;
+  text-align: center;
+}
+.img-content{
+  display: inline-block;
+  width: 190rpx;
+  height: 190rpx;
+  border-radius: 50%;
+  border: 4rpx solid white;
+}
+.user-avatar{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 4rpx solid white;
+  margin-top: 13rpx;
+}
+.nick-name{
+  color: #ccc;
+}
+.tips-item{
+  margin-bottom: 20rpx;
+}
+.f24{
+  font-size: 24rpx;
+  color:#737373;
+}
+.function-content{
+  width: 95%;
+  margin: 0 auto;
+  background: white;
+  margin-top: -50rpx;
+  box-shadow: 0 0 100rpx black;
+  background: #e9e7e8;
+}
+.item{
+  margin-bottom: 20rpx;
+  background: white;
+}
+.item-content{
+  padding: 35rpx;
+}
+.tips{
+  font-size:30rpx;
+  color: #585858;
+}
+.value{
+  font-size: 25rpx;
+  float:right;
+  color:#bbb;
+  margin-top: 20rpx;
+}

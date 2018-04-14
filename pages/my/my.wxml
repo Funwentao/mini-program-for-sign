@@ -1,0 +1,30 @@
+<view class='wx-content'>
+  <view>
+    <view class='img-content'>
+      <image src="{{userInfo.avatarUrl}}" class='user-avatar'></image>
+    </view>
+  </view>
+  <view class='nick-name'>{{userInfo.nickName}}</view>
+</view>
+<view class='function-content'>
+  <view class='item'>
+    <view class='item-content'>
+      <text class='tips'>姓名</text>
+      <text class='value'>方文涛</text>
+    </view>
+    <view class='item-content'>
+      <text class='tips'>学号</text>
+      <text class='value'>2014150283</text>
+    </view>
+  </view>
+  <view class='item'>
+    <view class='item-content'>
+      <text class='tips'>切换账户</text>
+      <text class='value'>方文涛</text>
+    </view>
+    <view class='item-content'>
+      <text class='tips'>签到记录</text>
+      <text class='value'>2014150283</text>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+<view>
+  <button type="primary" bindtap='scanHandler'>扫码签到</button>
+</view>

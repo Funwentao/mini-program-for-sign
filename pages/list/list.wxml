@@ -1,0 +1,18 @@
+<view class='list-content'>
+  <view wx:for="{{coourseList}}" wx:key="{{item.courseId}}" class="list-item" data-courseId="{{item.courseId}}" bindtap="goToScan">
+   <view class="course-name+{{item.className}}">
+    <text>{{item.courseName}}</text>
+   </view>
+   <view class='tips'>
+     <view>
+        <text class='tips-item'>上课时间：{{item.time}}</text>
+        <text class='tips-item'>上课地点：{{item.loc}}</text>
+    </view>
+    <view>
+        <text class='tips-item'> <text decode="{{true}}" space="{{true}}">&emsp;&emsp;</text>老师：{{item.teacher}}</text>
+        <text class='tips-item'> <text decode="{{true}}" space="{{true}}">&emsp;</text>课程号：{{item.courseNum}}</text>
+    </view>
+   </view>
+  </view>
+</view>
+

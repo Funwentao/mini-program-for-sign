@@ -1,0 +1,3 @@
+<view class="btn-area">
+  <navigator url="/pages/index/index">切换 Tab</navigator>
+</view>
