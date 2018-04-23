@@ -1,5 +1,5 @@
 <view>
-  <input type='string' placeholder='输入用户名' value='{{username}}' bindblur='usernameInput'/>
+  <input type='string' placeholder='输入学号' value='{{username}}' bindblur='usernameInput'/>
   <input type='password' placeholder='输入密码' value='{{password}}' bindblur='passwordInput'/>
   <button type='primary' bindtap='loginHandler'>确定</button>
 </view>

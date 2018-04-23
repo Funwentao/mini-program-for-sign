@@ -48,24 +48,6 @@ page{
     box-shadow: 0 5rpx 30rpx black;
     position: relative;
 }
-.course-name{
-    color: white;
-    height: 200rpx;
-    text-align: center;
-    line-height: 150rpx;
-    font-size: 48rpx;
-}
-.tips{
-    background: white;
-    font-size: 12px;
-    color:#737373;
-}
-.tips-item{
-    line-height:80rpx;
-    height:80rpx;
-    padding-left:20rpx;
-    box-sizing:border-box;
-}
 .sign-state{
    position:absolute;
   width:100rpx;
@@ -84,6 +66,21 @@ page{
   .failed{
     color: #cf1322;
   }
-  .wait{
-    color:gray;
-  }
+.course-name{
+    color: white;
+    height: 200rpx;
+    text-align: center;
+    line-height: 150rpx;
+    font-size: 48rpx;
+}
+.tips{
+    background: white;
+    font-size: 12px;
+    color:#737373;
+}
+.tips-item{
+    line-height:80rpx;
+    height:80rpx;
+    padding-left:20rpx;
+    box-sizing:border-box;
+}

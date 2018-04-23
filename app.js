@@ -10,7 +10,6 @@ App({
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res.code);
         const URL = 'https://api.funwt.top/user/openid?code=' + res.code;
         wx.request({
           url: URL,
@@ -18,23 +17,21 @@ App({
             'content-type':'json'
           },
           success:function(res){
-            console.log(res);
+            const openid = res.data.openid
             wx.getStorageSync('openid') || wx.setStorageSync('openid', res.data.openid);
-            let openid = wx.getStorageSync('openid');
-            //查询是否注册过
-            if (openid ==="oXcsX0ZOO-CmnV8gIfB4iThwHMJ8"){
-              wx.switchTab({
-                url: '../list/list',
-               //url:'../my/my'
-              });
-            }else{
-              wx.switchTab({
-                url: '../login/login',
-              });
-            }
-            // wx.redirectTo({
-            //   url: '/pages/logs/logs'
-            // })
+            wx.request({
+              url: 'https://api.funwt.top/user/isExist?openid='+ openid,
+              header: {
+                'content-type': 'json'
+              },
+              success:function(res){
+                if(res.data.status === "success"){
+                  wx.switchTab({
+                    url: '../list/list',
+                  });
+                }
+              }
+            })
           }
         })
       }

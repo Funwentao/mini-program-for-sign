@@ -1,11 +1,8 @@
-<view wx:if="{{!courseList.length}}" class="no-class">今天放飞自我，没有课...</view>
+<view wx:if="{{!courseList.length}}" class="no-class">暂无记录哦，你不会放飞到连选课都忘了吧？...</view>
 <view class='list-content'>
-  <view wx:for="{{courseList}}" wx:key="{{item.courseId}}" class="list-item" data-signId="{{item.signId}}" bindtap="goToScan">
-  <view class="sign-state">
-      <div class="info" class="wait" wx:if="{{item.state===0}}">未签到</div>
-      <div class="info" class="wait" wx:if="{{item.state===1}}">待审核</div>
-      <div class="info" class="failed" wx:if="{{item.state===2}}">Failed</div>
-      <div class="info" class="success" wx:if="{{item.state===3}}">success</div>
+  <view wx:for="{{courseList}}" wx:key="{{item.courseId}}" class="list-item" data-signId="{{item.signId}}">
+    <view class="sign-state+{{item.state===3?'success':'failed'}}">
+      <div class="info">{{item.state===3?"Success":"Failed"}}</div>
     </view>
    <view class="course-name+{{'color'+index%10}}">
     <text>{{item.course}}</text>

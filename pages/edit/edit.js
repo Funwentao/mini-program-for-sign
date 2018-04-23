@@ -1,42 +1,45 @@
+// pages/edit/edit.js
 Page({
+
+  /**
+   * 页面的初始数据
+   */
   data: {
-    username:'',
-    password:''
+    oldPassword:'',
+    newPassword:''
   },
-  usernameInput:function(e){
+  oldPasswordInput(e){
     this.setData({
-      username: e.detail.value
+      oldPassword: e.detail.value
     })
   },
-  passwordInput:function(e){
+  newPasswordInput(e){
     this.setData({
-      password:e.detail.value
-    });
+      newPassword: e.detail.value
+    })
   },
-  loginHandler:function(){
-    if(this.data.username===''||this.data.password===''){
+  editHandler: function () {
+    if (this.data.oldPassword === '' || this.data.newPassword === '') {
       wx.showModal({
         title: '提示',
         content: '信息未填写完整！'
       })
-    }else{
+    } else {
       const openid = wx.getStorageSync('openid');
       wx.request({
-        url: 'https://api.funwt.top/user/login',
-        method: "POST",
+        url: 'https://api.uzpeng.top/sign/v1/student/password',
+        method: "PUT",
         data: {
-          password: this.data.password,
-          studentNum: this.data.username,
-          openid: openid
+          oldPassword: this.data.oldPassword,
+          newPassword: this.data.newPassword,
+          openId: openid
         },
         header: {
           'content-type': 'application/json'
         },
         success: function (res) {
           if (res.data.status === "success") {
-            wx.switchTab({
-              url: '../list/list',
-            });
+            wx.navigateBack();  
           } else {
             wx.showModal({
               title: '错误',

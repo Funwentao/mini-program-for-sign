@@ -35,7 +35,7 @@ page{
   margin: 0 auto;
   background: white;
   margin-top: -50rpx;
-  box-shadow: 0 0 100rpx black;
+  box-shadow: 0 5rpx 40rpx black;
   background: #e9e7e8;
 }
 .item{
@@ -54,4 +54,10 @@ page{
   float:right;
   color:#bbb;
   margin-top: 20rpx;
+}
+.arrow-img{
+  width:70rpx;
+  height:70rpx;
+  float:right;
+  transform:rotate(-90deg);
 }

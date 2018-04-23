@@ -10,21 +10,25 @@
   <view class='item'>
     <view class='item-content'>
       <text class='tips'>姓名</text>
-      <text class='value'>方文涛</text>
+      <text class='value'>{{studentName}}</text>
     </view>
     <view class='item-content'>
       <text class='tips'>学号</text>
-      <text class='value'>2014150283</text>
+      <text class='value'>{{studentNum}}</text>
     </view>
   </view>
   <view class='item'>
-    <view class='item-content'>
+    <view class='item-content' bindtap='changeAccount'>
       <text class='tips'>切换账户</text>
-      <text class='value'>方文涛</text>
+      <image src='../../icon/f107.png' class="arrow-img"></image>
     </view>
-    <view class='item-content'>
+    <view class='item-content' bindtap='goToHistory'>
       <text class='tips'>签到记录</text>
-      <text class='value'>2014150283</text>
+      <image src='../../icon/f107.png' class="arrow-img"></image>
+    </view>
+    <view class='item-content' bindtap='goToEdit'>
+      <text class='tips'>修改密码</text>
+      <image src='../../icon/f107.png' class="arrow-img"></image>
     </view>
   </view>
 </view>

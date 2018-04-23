@@ -1,43 +1,41 @@
 Page({
   data: {
-    coourseList: [{
-      courseName: '离散数学',
-      loc: '文科楼',
-      time: '第3-4节',
-      teacher: '陈飞',
-      courseNum: "2014150283",
-      courseId: 1,
-      className: "color" + Math.ceil(Math.random() * 10)
-    }, {
-      courseName: '离散数学',
-      loc: '文科楼',
-      time: '第3-4节',
-      teacher: '陈飞',
-      courseNum: "2014150283",
-      courseId: 2,
-      className: "color" + Math.ceil(Math.random() * 10)
-    }, {
-      courseName: '离散数学',
-      loc: '文科楼',
-      time: '第3-4节',
-      teacher: '陈飞',
-      courseNum: "2014150283",
-      courseId: 3,
-      className: "color" + Math.ceil(Math.random() * 10)
-    }, {
-      courseName: '离散数学',
-      loc: '文科楼',
-      time: '第3-4节',
-      teacher: '陈飞',
-      courseNum: "2014150283",
-      courseId: 4,
-      className: "color" + Math.ceil(Math.random() * 10)
-    }]
+    courseList: []
+  },
+  onPullDownRefresh: function () {
+    const openid = wx.getStorageSync('openid');
+    const that = this;
+    wx.request({
+      url: 'https://api.uzpeng.top/sign/v1/student/sign?type=1&openId=' + openid,
+      header: {
+        'content-type': 'json'
+      },
+      success: function (res) {
+        that.setData({
+          courseList: res.data.list
+        });
+        wx.stopPullDownRefresh();
+      }
+    })
+  },
+  onLoad: function (options) {
+    const openid = wx.getStorageSync('openid');
+    const that = this;
+    wx.request({
+      url: 'https://api.uzpeng.top/sign/v1/student/sign?type=1&openId=' + openid,
+      header: {
+        'content-type': 'json'
+      },
+      success:function(res){
+        that.setData({
+          courseList:res.data.list
+        })
+      }
+    })
   },
   goToScan: function (e) {
-    console.log(e.currentTarget.dataset.courseid);
     wx.navigateTo({
-      url: '../scan/scan?courseId=' + e.currentTarget.dataset.courseid,
+      url: '../scan/scan?signid=' + e.currentTarget.dataset.signid,
       fail: function () {
         console.log("fail");
       }

@@ -1,0 +1,10 @@
+page{
+  padding: 20px;
+  box-sizing: border-box;
+}
+input{
+  border:1rpx solid #ccc;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  border-radius: 4rpx;
+}
